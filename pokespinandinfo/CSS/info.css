@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(28, 28, 29);
+    padding: 0;
+    margin: 0;
+}
+
+.top-part{
+    position: relative;
+    top:142.8px;
+    left: 340px;
+    /*top part that will come apart*/
+
+}
+
+.bottom-part{
+    position: relative;
+    top: 141px;
+    left: 340px;
+    /*bottom part that will come apart*/
+}
+
+
+.poke-btn{
+    border: 6.8px solid rgb(0, 0, 0);
+    border-radius: 70%; /* Ensures the element is a perfect circle */
+     /* Adjust the padding as needed */
+    width: 170px; /* Set the width and height to be equal */
+    height: 149px; /* Set the width and height to be equal */
+    position: relative;
+    top: 270px;
+    left: -50px;
+    z-index: 1;
+}
+
+.pokebody{
+    /*Will features to the body of the pokeball*/
+    border: 3px solid black;
+}
