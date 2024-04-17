@@ -2,11 +2,12 @@ body{
     background-color: rgb(28, 28, 29);
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 .top-part{
     position: relative;
-    top:142.8px;
+    top:109.8px;
     left: 340px;
     /*top part that will come apart*/
 
@@ -14,7 +15,7 @@ body{
 
 .bottom-part{
     position: relative;
-    top: 141px;
+    top: 109px;
     left: 340px;
     /*bottom part that will come apart*/
 }
@@ -27,12 +28,94 @@ body{
     width: 170px; /* Set the width and height to be equal */
     height: 149px; /* Set the width and height to be equal */
     position: relative;
-    top: 270px;
+    top: 240px;
     left: -50px;
     z-index: 1;
+    transition: 2s;
+
 }
 
 .pokebody{
     /*Will features to the body of the pokeball*/
     border: 3px solid black;
 }
+
+button{
+    position: absolute;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    bottom: 120px;
+    left: 100px;
+    background-color: white;
+    font-size: 18px;
+    padding: 20px;
+}
+
+button:hover{
+    background-color: rgb(11, 11, 11);
+    border: 3.2px solid red;
+    color: white;
+    font-size: 18px;
+
+}
+
+
+/*=============================================ANIMATION========================================================*/
+.dex-body{
+    background-color: darkgray;
+    position: relative;
+   
+}
+
+/*These are for the animations that going to be added to the top and bottom part of the pokeball*/
+.animate-topart{
+    animation:Poketop 1s ease-out  forwards normal;
+}
+
+.animate-bottompart{
+    animation:Pokebottom 1s ease-out  forwards normal;
+}
+
+.anim-square{
+    animation:  Info-Square-h 2s 2s ease-in-out normal forwards;
+}
+
+
+
+@keyframes Poketop {
+    0%{
+        position: relative;
+        top:109.8px;
+    }
+    100%{
+        position: relative;
+        top:-269.8px;
+    }
+}
+
+@keyframes Pokebottom {
+    0%{
+        position: relative;
+        top:109.8px;
+    }
+    100%{
+        position: relative;
+        top:469.8px;
+    }
+}
+
+@keyframes Info-Square-h {
+    0%{
+        width: 100px;
+      
+    }
+    100%{
+        height: 560px;
+        width: 880px;
+        top: -430px;
+        left: 206px;
+    }
+}
+
+/*=============================================ANIMATION========================================================*/
