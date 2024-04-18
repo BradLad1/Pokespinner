@@ -9,6 +9,8 @@ poke_ball_bottom=document.getElementById("pokebottom-white")//bottom part of the
 poke_search_btn=document.getElementById("poke-btn")
 pokeball_red =document.querySelector(".top-part")
 pokeball_white=document.querySelector(".bottom-part")
+hideaway=document.querySelector("hide-away")
+pokeicon =document.getElementById("pokemon-icon")
 //pokeball variables
 
 //===============VARIABLES =================
@@ -25,24 +27,29 @@ async function Show_that_pokemon(){
     } 
 
         showpokemon = true
+        showinfo=false
         if (showpokemon==true){   
             
             pokeball_red.classList.add("animate-topart")
             pokeball_white.classList.add("animate-bottompart")
             poke_search_btn.style.display = "none";
             console.log("done")
-            setTimeout(()=>{
-                dexbody.classList.add("dex-body") & dexbody.classList.add("anim-square") 
-
+                dexbody.classList.add("dex-body") 
+                dexbody.classList.add("anim-square")
+                dexbody.classList.remove("hide-away")
                 
-
-        },1000)
-    }
-
+        //function addiconsection(){
+       //     dexbody.classList.add("iconsection")
+       // }
+        //setTimeout(addiconsection, 2000)
+        }
         const data =  await response.json()
-
-        const pokemonSprite = data;
- 
+        //get the image
+        Img = document.createElement("img")
+        pokeicon.appendChild(Img)
+        const pokemonSprite = data.sprites.front_default;
+        Img.src=pokemonSprite
+        
         
       
         console.log(pokemonSprite)

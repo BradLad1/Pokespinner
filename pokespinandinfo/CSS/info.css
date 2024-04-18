@@ -6,17 +6,17 @@ body{
 }
 
 .top-part{
-    position: relative;
-    top:109.8px;
-    left: 340px;
+    position: absolute;
+    top:87.8px;
+    left: 460px;
     /*top part that will come apart*/
 
 }
 
 .bottom-part{
-    position: relative;
-    top: 109px;
-    left: 340px;
+    position: absolute;
+    top: 347px;
+    left: 460px;
     /*bottom part that will come apart*/
 }
 
@@ -27,9 +27,9 @@ body{
      /* Adjust the padding as needed */
     width: 170px; /* Set the width and height to be equal */
     height: 149px; /* Set the width and height to be equal */
-    position: relative;
-    top: 240px;
-    left: -50px;
+    position: absolute;
+    top: 274px;
+    left: 676px;
     z-index: 1;
     transition: 2s;
 
@@ -64,8 +64,11 @@ button:hover{
 /*=============================================ANIMATION========================================================*/
 .dex-body{
     background-color: darkgray;
-    position: relative;
-   
+    position: absolute;
+}
+.hide-away{
+    display: none;
+
 }
 
 /*These are for the animations that going to be added to the top and bottom part of the pokeball*/
@@ -78,30 +81,34 @@ button:hover{
 }
 
 .anim-square{
-    animation:  Info-Square-h 2s 2s ease-in-out normal forwards;
+    animation:  Info-Square-h 2s  ease-in-out normal forwards;
 }
 
 
 
 @keyframes Poketop {
     0%{
-        position: relative;
-        top:109.8px;
+        position: absolute;
+        top:87.8px;
+        left: 460px;
+
     }
     100%{
-        position: relative;
-        top:-269.8px;
+        position: absolute;
+        top:-329.8px;
     }
 }
 
 @keyframes Pokebottom {
     0%{
-        position: relative;
-        top:109.8px;
+        position: absolute;
+        top: 347px;
+        left: 460px;
+
     }
     100%{
-        position: relative;
-        top:469.8px;
+        position: absolute;
+        top:719.8px;
     }
 }
 
@@ -113,9 +120,22 @@ button:hover{
     100%{
         height: 560px;
         width: 880px;
-        top: -430px;
-        left: 206px;
+        top: 70px;
+        left: 326px;
     }
 }
 
 /*=============================================ANIMATION========================================================*/
+
+
+.iconsection{
+    border: 2px whitesmoke solid;
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    /* Adjust position to fit within dex-body */
+    top: 0;
+    left: 0;
+    padding: 40px;
+   
+}
