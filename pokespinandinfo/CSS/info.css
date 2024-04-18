@@ -2,20 +2,21 @@ body{
     background-color: rgb(28, 28, 29);
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 .top-part{
-    position: relative;
-    top:142.8px;
-    left: 340px;
+    position: absolute;
+    top:87.8px;
+    left: 460px;
     /*top part that will come apart*/
 
 }
 
 .bottom-part{
-    position: relative;
-    top: 141px;
-    left: 340px;
+    position: absolute;
+    top: 347px;
+    left: 460px;
     /*bottom part that will come apart*/
 }
 
@@ -26,13 +27,115 @@ body{
      /* Adjust the padding as needed */
     width: 170px; /* Set the width and height to be equal */
     height: 149px; /* Set the width and height to be equal */
-    position: relative;
-    top: 270px;
-    left: -50px;
+    position: absolute;
+    top: 274px;
+    left: 676px;
     z-index: 1;
+    transition: 2s;
+
 }
 
 .pokebody{
     /*Will features to the body of the pokeball*/
     border: 3px solid black;
+}
+
+button{
+    position: absolute;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    bottom: 120px;
+    left: 100px;
+    background-color: white;
+    font-size: 18px;
+    padding: 20px;
+}
+
+button:hover{
+    background-color: rgb(11, 11, 11);
+    border: 3.2px solid red;
+    color: white;
+    font-size: 18px;
+
+}
+
+
+/*=============================================ANIMATION========================================================*/
+.dex-body{
+    background-color: darkgray;
+    position: absolute;
+}
+.hide-away{
+    display: none;
+
+}
+
+/*These are for the animations that going to be added to the top and bottom part of the pokeball*/
+.animate-topart{
+    animation:Poketop 1s ease-out  forwards normal;
+}
+
+.animate-bottompart{
+    animation:Pokebottom 1s ease-out  forwards normal;
+}
+
+.anim-square{
+    animation:  Info-Square-h 2s  ease-in-out normal forwards;
+}
+
+
+
+@keyframes Poketop {
+    0%{
+        position: absolute;
+        top:87.8px;
+        left: 460px;
+
+    }
+    100%{
+        position: absolute;
+        top:-329.8px;
+    }
+}
+
+@keyframes Pokebottom {
+    0%{
+        position: absolute;
+        top: 347px;
+        left: 460px;
+
+    }
+    100%{
+        position: absolute;
+        top:719.8px;
+    }
+}
+
+@keyframes Info-Square-h {
+    0%{
+        width: 100px;
+      
+    }
+    100%{
+        height: 560px;
+        width: 880px;
+        top: 70px;
+        left: 326px;
+    }
+}
+
+/*=============================================ANIMATION========================================================*/
+
+
+.iconsection{
+    border: 2px whitesmoke solid;
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    /* Adjust position to fit within dex-body */
+    top: 0;
+    left: 0;
+    padding: 40px;
+   
 }

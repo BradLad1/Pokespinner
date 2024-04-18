@@ -9,9 +9,20 @@
 </head>
 <body>
     <div class="container">
-    <img src="./imgs/poketop.png" class="img-fluid top-part" width="600px"  alt="top">
-    <input type="text" class="poke-btn">
-    <img src="./imgs/pokebottom.png" class="img-fluid bottom-part"  width="600px" alt="bottom">
+        <!--This whole section is the pokeball body and search-->
+    <span><img src="./imgs/poketop.png" class="img-fluid top-part" width="600px" id="poketop-red" alt="top"></span>
+    <span id="search-sectionv"><input type="text" class="poke-btn" id="poke-btn" style="    text-align: center;" id="pokebottom-white" placeholder=" Enter pokemon/id"></span>
+    <span> <img src="./imgs/pokebottom.png" class="img-fluid bottom-part"  width="600px" alt="bottom"></span>
+    <span><button style="z-index: 1;" id="pokeget-btn" onclick="Show_that_pokemon()">Search</button></span><!--Here is what we use to search for a pokemon-->
+
+    <div class="hide-away" id="dex-body">
+        <!--This will show the body-->
+        <div id="pokemon-icon" class="iconsection">
+            pokemonicon
+             
+        </div>
+        <h1 id="pokemon-name">pokemon name</h1>
+    </div>
 </div>
     <script src="./JS/PokeInfo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
