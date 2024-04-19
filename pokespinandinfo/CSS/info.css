@@ -129,13 +129,18 @@ button:hover{
 
 
 .iconsection{
-    border: 2px whitesmoke solid;
-    width: 200px;
-    height: 150px;
+    border: 4px whitesmoke solid;
+    width: 230px;
+    height: 180px;
     position: absolute;
     /* Adjust position to fit within dex-body */
     top: 0;
     left: 0;
     padding: 40px;
    
+}
+.icon{
+    position: absolute;
+    top: 35px;
+    left: 60px;
 }
