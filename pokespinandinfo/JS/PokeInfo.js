@@ -11,6 +11,7 @@ pokeball_red =document.querySelector(".top-part")
 pokeball_white=document.querySelector(".bottom-part")
 hideaway=document.querySelector("hide-away")
 pokeicon =document.getElementById("pokemon-icon")
+nopokemon =document.getElementById("no-pokemon")
 //pokeball variables
 
 //===============VARIABLES =================
@@ -26,6 +27,9 @@ async function Show_that_pokemon(){
             throw new Error("Could not fetch resource");
     } 
 
+    if(pokebutton=""){
+        nopokemon.innerText="ENTER A NAME"
+    }
         showpokemon = true
         showinfo=false
         if (showpokemon==true){   
@@ -44,10 +48,14 @@ async function Show_that_pokemon(){
         //setTimeout(addiconsection, 2000)
         }
         const data =  await response.json()
+        console.log(data)
         //get the image
         Img = document.createElement("img")
         pokeicon.appendChild(Img)
         const pokemonSprite = data.sprites.front_default;
+        Img.style.scale="1.95"
+        Img.style.scale="1.95"
+        Img.classList.add("icon")
         Img.src=pokemonSprite
         
         
