@@ -4,30 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokrSpinner/Info</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./CSS/info.css">
     <style>
         h1{
            position: relative;
            left: 280px;
-           font-size: 3.3rem;
+    
         }
+        ul{
+            margin-left:34% ;
+            list-style: none;
+        }
+
+        li{
+            font-size: 25px;
+        }
+            
     </style>
 </head>
 <body>
     <div class="container">
         <!--This whole section is the pokeball body and search-->
     <span><img src="./imgs/poketop.png" class="img-fluid top-part" width="600px" id="poketop-red" alt="top"></span>
-    <span id="search-sectionv"><input type="text" class="poke-btn" id="poke-btn" style="    text-align: center;" id="pokebottom-white" placeholder=" Enter pokemon/id"></span>
+    <span id="search-sectionv"><input type="text" class="poke-btn" id="poke-btn" style="    text-align: center;"  placeholder=" Enter pokemon/id"></span>
     <span> <img src="./imgs/pokebottom.png" class="img-fluid bottom-part"  width="600px" alt="bottom"></span>
     <span><button style="z-index: 1;" id="pokeget-btn" onclick="Show_that_pokemon()">Search</button></span><!--Here is what we use to search for a pokemon-->
 
     <div class="hide-away" id="dex-body">
+
         <span id="no-pokemon"></span>
         <!--This will show the body-->
-        <div id="pokemon-icon" class="iconsection"></div>
-        <h1 id="pokemon-name">pokemon name</h1>
+        <div id="pokemon-icon" class="iconsection">
+            <h1 id="pokemon-name" style="position: relative; left: -2px;top: -40px;"></h1>
+        </div>
+
+        <ul id="Abilites-list">
+            <p style="font-size: 45px;">Abilites</p>
+        </ul>        
+            <div class="genartioninfo">
+                <span>First apperance</span>
+            <p id="origin-game" class="gen"></p>
+        </div>
     </div>
+
 </div>
     <script src="./JS/PokeInfo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

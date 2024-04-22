@@ -6,14 +6,20 @@ poke_ball_top=document.getElementById("poketop-red")//Top part of the pokeball
 poke_ball_bottom=document.getElementById("pokebottom-white")//bottom part of the pokeball
 
 //pokeball variables
-poke_search_btn=document.getElementById("poke-btn")
-pokeball_red =document.querySelector(".top-part")
-pokeball_white=document.querySelector(".bottom-part")
-hideaway=document.querySelector("hide-away")
-pokeicon =document.getElementById("pokemon-icon")
-nopokemon =document.getElementById("no-pokemon")
-//pokeball variables
+poke_search_btn=document.getElementById("poke-btn")//the button for searching
+pokeball_red =document.querySelector(".top-part")//top part of pokeball
+pokeball_white=document.querySelector(".bottom-part")//bottom part of pokeball
+hideaway=document.querySelector("hide-away")//hides the og data
+pokeicon =document.getElementById("pokemon-icon")//shows the pokemon icon
+nopokemon =document.getElementById("no-pokemon")//will show if there is no pokemon
+pokemonName=document.getElementById("pokemon-name")
+var red_Or_blue=0
+origin_game=document.getElementById("origin-game")
 
+
+//get the abilites
+abilitylist=document.getElementById("Abilites-list")
+//pokeball variables
 //===============VARIABLES =================
 
 async function Show_that_pokemon(){
@@ -53,18 +59,34 @@ async function Show_that_pokemon(){
         Img = document.createElement("img")
         pokeicon.appendChild(Img)
         const pokemonSprite = data.sprites.front_default;
-        Img.style.scale="1.95"
-        Img.style.scale="1.95"
+        Img.style.scale="2"
+        Img.style.scale="2"
         Img.classList.add("icon")
         Img.src=pokemonSprite
         
-        
-      
-        console.log(pokemonSprite)
-    }   
-    catch(error){
+        //pokemoname
+        ///This is done to give the pokemon name
+        chosenpokemon_name=data.name
+        if(chosenpokemon_name=="keldeo-ordinary"){
+           chosenpokemon_name = data.name="Keldo"
+        }
+        pokemonName.innerText=chosenpokemon_name
+
+        //pokename
+data.abilities.forEach( abilityname =>{
+    const li = document.createElement("li");
+    li.textContent = abilityname.ability.name
+    abilitylist.appendChild(li);
+    console.log(abilityname)
+})
+if(data.id >red_Or_blue && red_Or_blue <=151 ){
+
+    origin_game.textContent ="Generation I"
+    console.log("worked")
+ }
+ } catch(error){
         console.error(error)
     }
 
 }
-
+ 
