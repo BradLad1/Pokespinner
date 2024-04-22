@@ -13,7 +13,7 @@ hideaway=document.querySelector("hide-away")//hides the og data
 pokeicon =document.getElementById("pokemon-icon")//shows the pokemon icon
 nopokemon =document.getElementById("no-pokemon")//will show if there is no pokemon
 pokemonName=document.getElementById("pokemon-name")
-var red_Or_blue=0
+poketype =document.getElementById("poke-type")
 origin_game=document.getElementById("origin-game")
 
 
@@ -48,10 +48,7 @@ async function Show_that_pokemon(){
                 dexbody.classList.add("anim-square")
                 dexbody.classList.remove("hide-away")
                 
-        //function addiconsection(){
-       //     dexbody.classList.add("iconsection")
-       // }
-        //setTimeout(addiconsection, 2000)
+ 
         }
         const data =  await response.json()
         console.log(data)
@@ -71,6 +68,7 @@ async function Show_that_pokemon(){
            chosenpokemon_name = data.name="Keldo"
         }
         pokemonName.innerText=chosenpokemon_name
+        //pokename
 
         //pokename
 data.abilities.forEach( abilityname =>{
@@ -79,14 +77,59 @@ data.abilities.forEach( abilityname =>{
     abilitylist.appendChild(li);
     console.log(abilityname)
 })
-if(data.id >red_Or_blue && red_Or_blue <=151 ){
 
+//Get abilites
+
+//Get Type
+data.types.forEach(PokemonType =>{
+    const p = document.createElement("p");
+    p.textContent=PokemonType.type.name
+    poketype.append(p)
+    console.log(PokemonType)
+})
+
+
+
+//Generation of pokemon
+if(data.id >0 && data.id <=151 ){
     origin_game.textContent ="Generation I"
     console.log("worked")
- }
+ } else if(data.id >=152 && data.id <=251){
+    origin_game.textContent ="Generation II"
+    console.log("worked")
+} else if(data.id >=252 && data.id <=386){
+    origin_game.textContent ="Generation III"
+    console.log("worked")
+}else if(data.id >=387 && data.id <=493){
+    origin_game.textContent ="Generation IV"
+    console.log("worked")
+}else if(data.id >=494 && data.id <=649){
+    origin_game.textContent ="Generation V"
+    console.log("worked")
+}else if(data.id >=650 && data.id <=721){
+    origin_game.textContent ="Generation VI"
+    console.log("worked")
+}else if(data.id >=722 && data.id <=807){
+    //MELTAN CODE
+    if(data.id ==808 ){
+        origin_game.textContent =" Pokémon: Let's Go Pikachu/Eevee"
+        console.log("worked")
+    }if(data.id ==809 ){
+        origin_game.textContent =" Pokémon: Let's Go Pikachu/Eevee"
+        console.log("worked")
+    //MELTAN CODE
+}else if(data.id >=810 && data.id <=905){
+    origin_game.textContent ="Generation VII"
+    console.log("worked")
+}else if(data.id >=906 && data.id <=1025){
+    origin_game.textContent ="Generation VIII"
+    console.log("worked")
+}//This code will give the genaration of the pokemon depending on their id
+}
  } catch(error){
         console.error(error)
     }
 
-}
+} 
+=======
  
