@@ -129,18 +129,28 @@ button:hover{
 
 
 .iconsection{
-    border: 4px whitesmoke solid;
-    width: 230px;
-    height: 180px;
+    border: 3.7px whitesmoke solid;
+    width: 310px;
+    height: 230px;
     position: absolute;
     /* Adjust position to fit within dex-body */
     top: 0;
     left: 0;
     padding: 40px;
-   
 }
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
 .icon{
-    position: absolute;
-    top: 35px;
-    left: 60px;
+    position: relative;
+    top: -23px;
+    left: 25px;
+}
+
+.genartioninfo{
+    margin-top: 20%;
 }

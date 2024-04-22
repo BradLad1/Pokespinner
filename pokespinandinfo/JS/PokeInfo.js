@@ -6,14 +6,20 @@ poke_ball_top=document.getElementById("poketop-red")//Top part of the pokeball
 poke_ball_bottom=document.getElementById("pokebottom-white")//bottom part of the pokeball
 
 //pokeball variables
-poke_search_btn=document.getElementById("poke-btn")
-pokeball_red =document.querySelector(".top-part")
-pokeball_white=document.querySelector(".bottom-part")
-hideaway=document.querySelector("hide-away")
-pokeicon =document.getElementById("pokemon-icon")
-nopokemon =document.getElementById("no-pokemon")
-//pokeball variables
+poke_search_btn=document.getElementById("poke-btn")//the button for searching
+pokeball_red =document.querySelector(".top-part")//top part of pokeball
+pokeball_white=document.querySelector(".bottom-part")//bottom part of pokeball
+hideaway=document.querySelector("hide-away")//hides the og data
+pokeicon =document.getElementById("pokemon-icon")//shows the pokemon icon
+nopokemon =document.getElementById("no-pokemon")//will show if there is no pokemon
+pokemonName=document.getElementById("pokemon-name")
+poketype =document.getElementById("poke-type")
+origin_game=document.getElementById("origin-game")
 
+
+//get the abilites
+abilitylist=document.getElementById("Abilites-list")
+//pokeball variables
 //===============VARIABLES =================
 
 async function Show_that_pokemon(){
@@ -42,10 +48,7 @@ async function Show_that_pokemon(){
                 dexbody.classList.add("anim-square")
                 dexbody.classList.remove("hide-away")
                 
-        //function addiconsection(){
-       //     dexbody.classList.add("iconsection")
-       // }
-        //setTimeout(addiconsection, 2000)
+ 
         }
         const data =  await response.json()
         console.log(data)
@@ -53,18 +56,76 @@ async function Show_that_pokemon(){
         Img = document.createElement("img")
         pokeicon.appendChild(Img)
         const pokemonSprite = data.sprites.front_default;
-        Img.style.scale="1.95"
-        Img.style.scale="1.95"
+        Img.style.scale="2"
+        Img.style.scale="2"
         Img.classList.add("icon")
         Img.src=pokemonSprite
         
-        
-      
-        console.log(pokemonSprite)
-    }   
-    catch(error){
+        //pokemoname
+        ///This is done to give the pokemon name
+        chosenpokemon_name=data.name
+        if(chosenpokemon_name=="keldeo-ordinary"){
+           chosenpokemon_name = data.name="Keldo"
+        }
+        pokemonName.innerText=chosenpokemon_name
+        //pokename
+//Get abilites
+data.abilities.forEach( abilityname =>{
+    const li = document.createElement("li");
+    li.textContent = abilityname.ability.name
+    abilitylist.appendChild(li);
+    console.log(abilityname)
+})
+//Get abilites
+
+//Get Type
+data.types.forEach(PokemonType =>{
+    const p = document.createElement("p");
+    p.textContent=PokemonType.type.name
+    poketype.append(p)
+    console.log(PokemonType)
+})
+
+//Get Type
+
+//Generation of pokemon
+if(data.id >0 && data.id <=151 ){
+    origin_game.textContent ="Generation I"
+    console.log("worked")
+ } else if(data.id >=152 && data.id <=251){
+    origin_game.textContent ="Generation II"
+    console.log("worked")
+} else if(data.id >=252 && data.id <=386){
+    origin_game.textContent ="Generation III"
+    console.log("worked")
+}else if(data.id >=387 && data.id <=493){
+    origin_game.textContent ="Generation IV"
+    console.log("worked")
+}else if(data.id >=494 && data.id <=649){
+    origin_game.textContent ="Generation V"
+    console.log("worked")
+}else if(data.id >=650 && data.id <=721){
+    origin_game.textContent ="Generation VI"
+    console.log("worked")
+}else if(data.id >=722 && data.id <=807){
+    //MELTAN CODE
+    if(data.id ==808 ){
+        origin_game.textContent =" Pokémon: Let's Go Pikachu/Eevee"
+        console.log("worked")
+    }if(data.id ==809 ){
+        origin_game.textContent =" Pokémon: Let's Go Pikachu/Eevee"
+        console.log("worked")
+    //MELTAN CODE
+}else if(data.id >=810 && data.id <=905){
+    origin_game.textContent ="Generation VII"
+    console.log("worked")
+}else if(data.id >=906 && data.id <=1025){
+    origin_game.textContent ="Generation VIII"
+    console.log("worked")
+}//This code will give the genaration of the pokemon depending on their id
+}
+ } catch(error){
         console.error(error)
     }
 
-}
-
+} 
