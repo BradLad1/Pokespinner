@@ -69,13 +69,15 @@ async function Show_that_pokemon(){
         }
         pokemonName.innerText=chosenpokemon_name
         //pokename
-//Get abilites
+
+        //pokename
 data.abilities.forEach( abilityname =>{
     const li = document.createElement("li");
     li.textContent = abilityname.ability.name
     abilitylist.appendChild(li);
     console.log(abilityname)
 })
+
 //Get abilites
 
 //Get Type
@@ -86,7 +88,7 @@ data.types.forEach(PokemonType =>{
     console.log(PokemonType)
 })
 
-//Get Type
+
 
 //Generation of pokemon
 if(data.id >0 && data.id <=151 ){
@@ -129,3 +131,5 @@ if(data.id >0 && data.id <=151 ){
     }
 
 } 
+=======
+ 
