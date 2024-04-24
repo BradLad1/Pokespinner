@@ -42,7 +42,6 @@
             <h1 id="pokemon-name" style="position: relative; left: -2px;top: -40px;"></h1>
         </div>
 
-
         <ul id="Abilites-list"><!--Display abilites-->
             <p style="font-size: 45px;">Abilites</p>
         </ul>        
@@ -56,17 +55,49 @@
             <p style="font-size: 29px;">Types</p>
         </div>
 
+        <div class="container-md stat-bar p-5">
+            <ul id="moves-learned">
 
-
-        <ul id="Abilites-list">
-            <p style="font-size: 45px;">Abilites</p>
-        </ul>        
-            <div class="genartioninfo">
-                <span>First apperance</span>
-            <p id="origin-game" class="gen"></p>
+                <li>
+                    <div class="progress"><!--For hp-->
+                        <div class="progress-bar bg-success" id="hp" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <div class="progress"><!--For attack-->
+                        <div class="progress-bar bg-success" id="attack" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <div class="progress"><!--For defense-->
+                        <div class="progress-bar bg-success" id="def" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <div class="progress"><!--For special-attack-->
+                        <div class="progress-bar bg-success" id="special-atk" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <div class="progress"><!--For special-defense-->
+                        <div class="progress-bar bg-success" id="special-def" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <div class="progress"><!--For speed-->
+                        <div class="progress-bar bg-success" id="speed" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </li>
+            </ul>
         </div>
-    </div>
 
+
+    </div>
 </div>
     <script src="./JS/PokeInfo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
