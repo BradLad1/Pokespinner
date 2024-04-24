@@ -10,8 +10,8 @@ poke_search_btn=document.getElementById("poke-btn")//the button for searching
 pokeball_red =document.querySelector(".top-part")//top part of pokeball
 pokeball_white=document.querySelector(".bottom-part")//bottom part of pokeball
 hideaway=document.querySelector("hide-away")//hides the og data
-pokeicon =document.getElementById("pokemon-icon")//shows the pokemon icon
-nopokemon =document.getElementById("no-pokemon")//will show if there is no pokemon
+pokeicon=document.getElementById("pokemon-icon")//shows the pokemon icon
+nopokemon=document.getElementById("no-pokemon")//will show if there is no pokemon
 pokemonName=document.getElementById("pokemon-name")
 poketype =document.getElementById("poke-type")
 origin_game=document.getElementById("origin-game")
@@ -20,6 +20,21 @@ origin_game=document.getElementById("origin-game")
 //get the abilites
 abilitylist=document.getElementById("Abilites-list")
 //pokeball variables
+
+
+//stat variables
+hp=document.getElementById("hp")
+attack=document.getElementById("attack")
+defense =document.getElementById("defense")
+special_atk=document.getElementById("special-atk")
+special_def=document.getElementById("special-def")
+speed=document.getElementById("speed")
+stat_list= []
+base_total=0
+percentinum=0
+//stat variables
+
+
 //===============VARIABLES =================
 
 async function Show_that_pokemon(){
@@ -69,15 +84,13 @@ async function Show_that_pokemon(){
         }
         pokemonName.innerText=chosenpokemon_name
         //pokename
-
-        //pokename
+//Get abilites
 data.abilities.forEach( abilityname =>{
     const li = document.createElement("li");
     li.textContent = abilityname.ability.name
     abilitylist.appendChild(li);
     console.log(abilityname)
 })
-
 //Get abilites
 
 //Get Type
@@ -87,8 +100,32 @@ data.types.forEach(PokemonType =>{
     poketype.append(p)
     console.log(PokemonType)
 })
+//Get Type
+
+//progress section 
+/*How this code section will work is that it will get the total base total of a pokemon's stats then after that
+will give the percentage that each stat makes on the base stat and it will show it on a progress bar*/
+console.log(data.stats)
+data.stats.forEach(stats =>{
+    added_stat= stats.base_stat
+    stat_list.push(added_stat)
+
+    base_total = base_total+added_stat
+}
+)
 
 
+console.log(stat_list)
+console.log(base_total)
+for (stat of stat_list){
+    percent_of_stat= stat/base_total*100
+    percentinum = percentinum+percent_of_stat
+    roundnum=percent_of_stat.toFixed(2)
+    console.log(roundnum)
+}
+console.log(percentinum.toFixed(2) + " is the total percentage"); // Output the total percentage after summing up
+
+//progress section 
 
 //Generation of pokemon
 if(data.id >0 && data.id <=151 ){
@@ -131,5 +168,3 @@ if(data.id >0 && data.id <=151 ){
     }
 
 } 
-=======
- 

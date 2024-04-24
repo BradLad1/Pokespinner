@@ -2,7 +2,6 @@ body{
     background-color: rgb(28, 28, 29);
     padding: 0;
     margin: 0;
-    overflow: hidden;
 }
 
 .top-part{
@@ -59,7 +58,13 @@ button:hover{
     font-size: 18px;
 
 }
+.stat-bar{
+    margin-top: -40%;
+}
 
+.stat-percent{
+    width: 100%;
+}
 
 /*=============================================ANIMATION========================================================*/
 .dex-body{
@@ -150,7 +155,6 @@ button:hover{
     top: -23px;
     left: 25px;
 }
-
 
 .genartioninfo{
     margin-top: 20%;
