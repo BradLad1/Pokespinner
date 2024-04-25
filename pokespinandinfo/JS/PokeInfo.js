@@ -24,11 +24,12 @@ abilitylist=document.getElementById("Abilites-list")
 
 //stat variables
 hp=document.getElementById("hp")
-attack=document.getElementById("attack")
-defense =document.getElementById("defense")
+atk=document.getElementById("attack")
+def =document.getElementById("defense")
 special_atk=document.getElementById("special-atk")
 special_def=document.getElementById("special-def")
 speed=document.getElementById("speed")
+statpercentage=document.querySelector("stat-percent")
 stat_list= []
 base_total=0
 percentinum=0
@@ -81,10 +82,13 @@ async function Show_that_pokemon(){
         chosenpokemon_name=data.name
         if(chosenpokemon_name=="keldeo-ordinary"){
            chosenpokemon_name = data.name="Keldo"
+           //Chnaging keldo name to just keldo
         }
         pokemonName.innerText=chosenpokemon_name
         //pokename
 //Get abilites
+//Type section 
+/*How this code section will work is that it will get the abilites of the pokemon then add them to an li that will be created and appeneded to a list*/
 data.abilities.forEach( abilityname =>{
     const li = document.createElement("li");
     li.textContent = abilityname.ability.name
@@ -94,6 +98,8 @@ data.abilities.forEach( abilityname =>{
 //Get abilites
 
 //Get Type
+//Type section 
+/*How this code section will work is that it will the type that the pokemon is and add it in a p element*/
 data.types.forEach(PokemonType =>{
     const p = document.createElement("p");
     p.textContent=PokemonType.type.name
@@ -117,17 +123,43 @@ data.stats.forEach(stats =>{
 
 console.log(stat_list)
 console.log(base_total)
+statbar_style=0
 for (stat of stat_list){
     percent_of_stat= stat/base_total*100
-    percentinum = percentinum+percent_of_stat
     roundnum=percent_of_stat.toFixed(2)
-    console.log(roundnum)
+  
+    
+
+    if(statbar_style==0){
+            console.log("happed")
+            hp.style.width=roundnum
+    } else if(statbar_style==1){
+            atk.style.width=roundnum
+            console.log("happed2")
+    } else if(statbar_style==2){
+        def.style.width=roundnum
+        console.log("happed3")
+
+}else if(statbar_style==3){
+        special_atk.style.width=roundnum
+        console.log("happed4")
+
+}else if(statbar_style==4){
+        special_def.style.width=roundnum
+        console.log("happed5")
+
+}else if(statbar_style==5){
+        speed.style.width=roundnum  
+        console.log("happed6")
+                 
 }
-console.log(percentinum.toFixed(2) + " is the total percentage"); // Output the total percentage after summing up
+    statbar_style +=1
+}
 
 //progress section 
 
 //Generation of pokemon
+//This will give the genartion of a pokemon depending on the id
 if(data.id >0 && data.id <=151 ){
     origin_game.textContent ="Generation I"
     console.log("worked")
