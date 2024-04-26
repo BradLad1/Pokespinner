@@ -127,35 +127,27 @@ statbar_style=0
 for (stat of stat_list){
     percent_of_stat= stat/base_total*100
     roundnum=percent_of_stat.toFixed(2)
-  
+
+    function simulateLoading() {
+        var progressBar = document.querySelector('.progress');
+        var width = 0;
+        var interval = setInterval(frame, 50);
+//This function will add progress to the progress bar
+        function frame() {
+            if (width >= 100) {
+                clearInterval(interval);
+            } else {
+                width++;
+                progressBar.style.width = roundnum + '%';
+            }
+        }
+    }
+
+    simulateLoading();
     
 
-    if(statbar_style==0){
-            console.log("happed")
-            hp.style.width=roundnum
-    } else if(statbar_style==1){
-            atk.style.width=roundnum
-            console.log("happed2")
-    } else if(statbar_style==2){
-        def.style.width=roundnum
-        console.log("happed3")
 
-}else if(statbar_style==3){
-        special_atk.style.width=roundnum
-        console.log("happed4")
-
-}else if(statbar_style==4){
-        special_def.style.width=roundnum
-        console.log("happed5")
-
-}else if(statbar_style==5){
-        speed.style.width=roundnum  
-        console.log("happed6")
-                 
 }
-    statbar_style +=1
-}
-
 //progress section 
 
 //Generation of pokemon
@@ -200,3 +192,5 @@ if(data.id >0 && data.id <=151 ){
     }
 
 } 
+
+getpokemonbtn.addEventListener("click", Show_that_pokemon);
