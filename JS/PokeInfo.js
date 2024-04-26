@@ -136,6 +136,7 @@ for (stat of stat_list){
             statbar.style.width = roundnum + '%';
         
         console.log(statbar)
+        //Code may not be working properly cause the for each loop is happening lastbefore anything
      })
 }
 
