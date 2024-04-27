@@ -35,6 +35,7 @@ base_total=0
 percentinum=0
 //stat variables
 
+Helditems=document.getElementById("Helditem")
 
 //===============VARIABLES =================
 
@@ -162,7 +163,14 @@ for (let i = 0; i < stat_list.length; i++) {
        
     } 
 }
+//HELD ITEMS
+data.held_items.forEach(Helditem=>{
+    li=document.createElement("li")
+    li.innerText=Helditem.item.name
+    Helditems.appendChild(li)
+})
 
+//HELD ITEMS
 
 //MOVES
 moveslist = document.getElementById("moves-list")
