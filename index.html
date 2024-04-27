@@ -29,7 +29,7 @@
 }
 .stat-body{
     background-color: whitesmoke;
-    width: 450px;
+    width: 385px;
     height: 20px;
     border-radius: 15px;
     position: relative;
@@ -42,6 +42,8 @@
         height: 100%;
         background-color: #4CAF50;
         position: absolute;
+        border-radius: 15px;
+
     }
 
     </style>
@@ -79,37 +81,41 @@
 
                         <!--For hp-->
                         <div class="stat-body">
-                        <div class="progresss" id="hp"  role="" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="" id="hp"  role="" style="background-color: rgb(109, 255, 80);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                         </div> 
                <br>
                         <!--For attack-->
                         <div class="stat-body">
-                        <div class="progresss" id="attack" role="" style="color: red; "aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="" id="attack" role="" style="background-color: rgb(243, 0, 0);" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                
                 <br>
                         <!--For defense-->
                         <div class="stat-body">
-                        <div class="progresss" id="def" style="color: rgb(36, 212, 227);" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="" id="def" style="background-color: rgb(0, 76, 152);" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                 <br>
                         <!--For special-attack-->
                         <div class="stat-body">
-                        <div class="progresss" id="special-atk" style="color: rgb(115, 22, 22);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="" id="special-atk"  style="background-color: rgb(242, 80, 6);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <br>
-                        <!--For special-defense-->
+                        <!--For sspecial-defense-->
                         <div class="stat-body">
-                        <div  class="progresss" id="special-def"  style="color: rgb(13, 8, 92);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div  class="" id="special-def"   style="background-color: rgb(76, 19, 220);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                 <br>
                         <!--For speed-->
                         <div class="stat-body">
-                        <div class="progresss" id="speed" style="color: blueviolet;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="" id="speed"  style="background-color: rgb(221, 3, 163);"aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
 
+                <div class="container">
+                    <ul id="moves-list" class="moves-list-class">
 
+                    </ul>
+                </div>
     </div>
 </div>
     <script src="/JS/PokeInfo.js"></script>

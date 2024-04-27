@@ -157,3 +157,13 @@ button:hover{
 .genartioninfo{
     margin-top: 20%;
 }
+
+/*moves class*/
+
+.moves-list-class{
+    height: 408px;
+    width: 200px;
+    background-color: antiquewhite;
+    overflow-x: scroll;
+    border: 6px solid black;
+}

@@ -25,7 +25,7 @@ abilitylist=document.getElementById("Abilites-list")
 //stat variables
 hp=document.getElementById("hp")
 atk=document.getElementById("attack")
-def =document.getElementById("defense")
+def =document.getElementById("def")
 special_atk=document.getElementById("special-atk")
 special_def=document.getElementById("special-def")
 speed=document.getElementById("speed")
@@ -49,7 +49,7 @@ async function Show_that_pokemon(){
             throw new Error("Could not fetch resource");
     } 
 
-    if(pokebutton=""){
+    if(pokebutton==""){
         nopokemon.innerText="ENTER A NAME"
     }
         showpokemon = true
@@ -123,26 +123,62 @@ data.stats.forEach(stats =>{
 
 console.log(stat_list)
 console.log(base_total)
-statbar_style=0
-for (stat of stat_list){
-    percent_of_stat= stat/base_total*100
-    roundnum=percent_of_stat.toFixed(2)
-    console.log(roundnum)
-    var progressBar = document.querySelectorAll('.progresss');
-    var width = 0;
-    progressBar.forEach(statbar=>{
+for (let i = 0; i < stat_list.length; i++) {
+    percent_of_stat = stat_list[i] / base_total * 100;
+    roundnum = percent_of_stat.toFixed(2);
+    console.log(roundnum);
 
-           
-            statbar.style.width = roundnum + '%';
-        
-        console.log(statbar)
-        //Code may not be working properly cause the for each loop is happening lastbefore anything
-     })
+    // Get the corresponding stat element based on the loop index
+    let statElement;
+    switch (i) {
+        case 0:
+            statElement = hp;
+            
+            break;
+        case 1:
+            statElement = atk;
+            break;
+        case 2:
+            statElement = def; // This should set the statElement to the "def" element
+            break;
+        case 3:
+            statElement = special_atk;
+            break;
+        case 4:
+            statElement = special_def;
+            break;
+        case 5:
+            statElement = speed;
+            break;
+        default:
+            break;
+    }
+    
+
+    // Add the progresss class and set the width
+    if (statElement) {
+        statElement.classList.add("progresss");
+        statElement.style.width = roundnum + "%";
+       
+    } 
 }
 
 
-//progress section 
+//MOVES
+moveslist = document.getElementById("moves-list")
+data.moves.forEach(Move=>{
+    li = document.createElement("li")
+    moveslist.appendChild(li)
+    
+    li.innerText=Move.move.name
+    console.log(Move.move)
+})
 
+
+//MOVES
+
+
+//progress section 
 //Generation of pokemon
 //This will give the genartion of a pokemon depending on the id
 if(data.id >0 && data.id <=151 ){
