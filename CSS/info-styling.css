@@ -1,0 +1,45 @@
+
+
+.iconsection{
+    border: 3.7px whitesmoke solid;
+    width: 310px;
+    height: 230px;
+    position: relative;
+    /* Adjust position to fit within dex-body */
+    top: 0;
+    left: 0;
+    padding: 40px;
+}
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.icon{
+    position: relative;
+    top: -23px;
+    left: 25px;
+}
+
+.genartioninfo{
+    margin-top: 20%;
+}
+
+/*Abilites List*/
+.abilites-section{
+    /*Add in the stylinf for ability section*/
+}
+
+/*Abilites List*/
+
+/*moves class*/
+
+.moves-list-class{
+    height: 408px;
+    width: 200px;
+    background-color: antiquewhite;
+    overflow-x: scroll;
+    border: 6px solid black;
+}

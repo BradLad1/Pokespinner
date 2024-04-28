@@ -66,10 +66,13 @@ button:hover{
 .dex-body{
     background-color: darkgray;
     position: absolute;
+    height: 560px;
+    width: 20px;
+    top: 70px;
+    border: 5px solid rgb(255, 255, 255);
 }
 .hide-away{
     display: none;
-
 }
 
 /*These are for the animations that going to be added to the top and bottom part of the pokeball*/
@@ -116,11 +119,10 @@ button:hover{
 }
 
 @keyframes Info-Square-h {
-    0%{
-        width: 100px;
-      
+    from{
+        left: 326px;
     }
-    100%{
+    to{
         height: 560px;
         width: 880px;
         top: 70px;
@@ -129,41 +131,3 @@ button:hover{
 }
 
 /*=============================================ANIMATION========================================================*/
-
-
-.iconsection{
-    border: 3.7px whitesmoke solid;
-    width: 310px;
-    height: 230px;
-    position: absolute;
-    /* Adjust position to fit within dex-body */
-    top: 0;
-    left: 0;
-    padding: 40px;
-}
-
-.bebas-neue-regular {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-  
-.icon{
-    position: relative;
-    top: -23px;
-    left: 25px;
-}
-
-.genartioninfo{
-    margin-top: 20%;
-}
-
-/*moves class*/
-
-.moves-list-class{
-    height: 408px;
-    width: 200px;
-    background-color: antiquewhite;
-    overflow-x: scroll;
-    border: 6px solid black;
-}
