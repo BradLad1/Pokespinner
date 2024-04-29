@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokrSpinner/Info</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./CSS/info.css">
+    <link rel="stylesheet" href="./CSS/info-styling.css">
+    <style>
+        h1{
+           position: relative;
+           left: 280px;
+    
+        }
+        ul{
+            margin-left:34% ;
+            list-style: none;
+        }
+
+        li{
+            font-size: 25px;
+        }
+.stat-bar{
+    margin-top: -70%;
+    margin-left: 28%;
+}
+.stat-body{
+    background-color: whitesmoke;
+    width: 385px;
+    height: 20px;
+    border-radius: 15px;
+    position: relative;
+
+}
+
+
+.progresss {
+        width: 0;
+        height: 100%;
+        background-color: #4CAF50;
+        position: absolute;
+        border-radius: 15px;
+        padding: 10px;
+
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!--This whole section is the pokeball body and search-->
+    <span><img src="./imgs/poketop.png" class="img-fluid top-part" width="600px" id="poketop-red" alt="top"></span>
+    <span id="search-sectionv"><input type="text" class="poke-btn" id="poke-btn" style="    text-align: center;"  placeholder=" Enter pokemon/id"></span>
+    <span> <img src="./imgs/pokebottom.png" class="img-fluid bottom-part"  width="600px" alt="bottom"></span>
+    <span><button style="z-index: 1;" id="pokeget-btn" >Search</button></span><!--Here is what we use to search for a pokemon-->
+
+    <div class="hide-away" id="dex-body" >
+
+        <span id="no-pokemon"></span>
+        <!--This will show the body-->
+        <div id="pokemon-icon" class="iconsection">
+            <h1 id="pokemon-name" style="position: relative; left: -2px;top: -40px;"></h1>
+        </div>
+
+        <ul id="Abilites-list" class="abilites-section"><!--Display abilites-->
+            <p style="font-size: 45px; text-decoration: underline;">Abilites</p>
+        </ul>        
+
+        <div class="genartioninfo"><!--Display generation-->
+            <span style="font-size: 29px;">First apperance</span>
+        <p id="origin-game"></p>
+        </div>
+
+        <div id="poke-type" class="container-md"><!--Display types-->
+            <p style="font-size: 29px;">Types</p>
+        </div>
+        <div class="container">
+            <ul id="Helditem">
+                <p style="font-size: 35px;">Held Items</p>
+            </ul>
+        </div>
+        <div class="container-md stat-bar p-5">
+
+                        <!--For hp-->
+                        <div class="stat-body">
+                        <div class="" id="hp"  role="" style="background-color: rgb(109, 255, 80);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div> 
+               <br>
+                        <!--For attack-->
+                        <div class="stat-body">
+                        <div class="" id="attack" role="" style="background-color: rgb(243, 0, 0);" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+               
+                <br>
+                        <!--For defense-->
+                        <div class="stat-body">
+                        <div class="" id="def" style="background-color: rgb(0, 76, 152);" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                <br>
+                        <!--For special-attack-->
+                        <div class="stat-body">
+                        <div class="" id="special-atk"  style="background-color: rgb(242, 80, 6);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <br>
+                        <!--For sspecial-defense-->
+                        <div class="stat-body">
+                        <div  class="" id="special-def"   style="background-color: rgb(76, 19, 220);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                <br>
+                        <!--For speed-->
+                        <div class="stat-body">
+                        <div class="" id="speed"  style="background-color: rgb(221, 3, 163);"aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                
+            
+                    <ul id="moves-list" class="moves-list-class">
+
+                    </ul>
+           
+    </div>
+</div>
+    <script src="JS/PokeInf.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+</body>
+</html>
