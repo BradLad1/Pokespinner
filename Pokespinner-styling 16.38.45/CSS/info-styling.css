@@ -1,0 +1,66 @@
+
+
+.iconsection{
+    border: 3.7px whitesmoke solid;
+    width: 310px;
+    height: 230px;
+    position: relative;
+    /* Adjust position to fit within dex-body */
+    top: 0;
+    left: 0;
+    padding: 40px;
+}
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.icon{
+    position: relative;
+    top: -23px;
+    left: 25px;
+}
+
+.genartioninfo{
+position: absolute;
+bottom:  165px;}
+
+/*Abilites List*/
+.abilites-section{
+    /*Add in the stylinf for ability section*/
+    margin:0;
+    padding: 0;
+    position: relative;
+    left: 340px;
+    top: -240px;
+}
+
+/*Abilites List*/
+
+
+/*Held Item*/
+.Held-item{
+    position: absolute;
+    top: 50px;
+    left: 610px;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+/*Held Item*/
+
+/*moves class*/
+
+.moves-list-class{
+    height: 208px;
+    width: 200px;
+    background-color: antiquewhite;
+    overflow-x: scroll;
+    border: 6px solid black;
+    position: relative;
+    top: -560px;
+    left: 380px;
+    overflow-x: hidden;
+}
