@@ -152,7 +152,7 @@ for (let i = 0; i < stat_list.length; i++) {
             num_hp.textContent=stat_list[i];
             break;
         case 2:
-            num_def.textContent=stat_list[i]; // This should set the statElement to the "def" element
+            num_def.textContent=stat_list[i]; // This should set the statElement to the "def" element with the text
             break;
         case 3:
             num_specialatk.textContent=stat_list[i];

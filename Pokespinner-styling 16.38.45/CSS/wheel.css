@@ -17,14 +17,14 @@ body{
     background: #333 ;
 }
 
-
 .container{
-    position: relative;
-    width: 550px;
-    height: 550px;
+    position: absolute;
+    width: 600px;
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .container .spinBtn{
@@ -50,7 +50,7 @@ body{
     top: -28px;
     width: 20px;
     height: 30px;
-    background: #fff;
+    background: #424242;
     clip-path: polygon(50% 0%, 15% 100%, 85% 100%);
 
 }
@@ -66,23 +66,26 @@ body{
     overflow: hidden;
     box-shadow: 0 0 0 5px #333, 
     0 0 0 15px #fff,  0 0 0 18px #111;
-    transition: transform 5s ease-in-out;
+    
 }
 
 
 .container .wheel .number{
+    transform:rotate(calc(45deg * var(--i)));
     position: absolute;
+    top:0;
+    left: 0;
     width: 50%;
     height: 50%;
-    background: var(--clr);
     transform-origin: bottom right;
-    transform: rotate(calc(45deg * var(--i)));
-    clip-path: polygon(0 0, 50% 0, 100% 100%, 0 56%);
     display: flex;
     justify-content: center;
     align-items: center;
     user-select: none;
     cursor: pointer;
+   clip-path: polygon(0 0, 56% 0, 100% 100%, 0 56%);
+
+
 }
 
 .container .wheel .number span{
@@ -93,4 +96,42 @@ body{
     color: #fff;
     text-shadow: 3px 5px 2px rgba(0,0,0,0.15);
 }
+
+.number p{
+    font-size: 24px;
+    z-index: 0; 
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 100px;
+    left: 180px;
+    }
+
+.transiton{
+    /*transition: transform 4.5s ease-in-out;*/
+}
+
+/*Animation to have the wheel moving*/
+.wheel-anim{
+    animation: SpinWheel 100s ease-in normal infinite forwards  ;
+}
+@keyframes SpinWheel {
+    
+  
+      to {
+        transform: rotate(3600deg);
+      }
+    }
+
+    .wheel-anim2{
+        animation: SpinWheel2 100s ease-in normal infinite forwards  ;
+    }
+    @keyframes SpinWheel2 {
+        
+      
+          to {
+            transform: rotate(3600deg);
+          }
+        }
+/*Animation to have the wheel moving*/
+
 

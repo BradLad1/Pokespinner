@@ -16,6 +16,8 @@
     background: #ff0000;
     transform-origin: bottom right;
     transform: rotate(calc(0deg * var(--i)));
+    clip-path: circle(50% at 50% 50%);
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,3 +37,9 @@
   top: 100px;
   left: 180px;
 }
+
+
+
+/*This is going to be the class for the clips that get added when a pokemon is added*/
+
+
